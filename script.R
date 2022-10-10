@@ -4,7 +4,7 @@
 library(tidyverse)
 library(openxlsx)
 
-write.csv2(x = mtcars, file = "mtcars.csv")
+write.csv2(x = mtcars %>% filter(cyl > 4), file = "mtcars.csv")
 
 wb <- createWorkbook()
 addWorksheet(wb = wb, sheetName = "mtcars")
