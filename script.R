@@ -8,5 +8,5 @@ write.csv2(x = mtcars %>% filter(cyl > 4), file = "mtcars.csv")
 
 wb <- createWorkbook()
 addWorksheet(wb = wb, sheetName = "mtcars")
-writeData(wb = wb, sheet = "mtcars", x = mtcars)
+writeData(wb = wb, sheet = "mtcars", x = mtcars %>% filter(cyl > 4))
 saveWorkbook(wb = wb, file = "mtcars.xlsx", overwrite = TRUE)
