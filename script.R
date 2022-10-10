@@ -5,3 +5,8 @@ library(tidyverse)
 library(openxlsx)
 
 write.csv2(x = mtcars, file = "mtcars.csv")
+
+wb <- createWorkbook()
+addWorksheet(wb = wb, sheetName = "mtcars")
+writeData(wb = wb, sheet = "mtcars", x = mtcars)
+saveWorkbook(wb = wb, file = "mtcars.xlsx", overwrite = TRUE)
